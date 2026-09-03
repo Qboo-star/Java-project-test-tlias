@@ -13,6 +13,7 @@ import java.util.List;
 @Mapper
 public interface EmpMapper {
     // 查询员工总数量
+    //
     @Select("select count(*) from emp e left join dept d on e.dept_id=d.id")
     public Long count(String name, Integer gender, LocalDate begin, LocalDate end);
 
