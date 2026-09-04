@@ -2,10 +2,7 @@ package com.kk.mapper;
 
 import com.kk.pojo.Emp;
 import com.kk.pojo.EmpQueryParam;
-import org.apache.ibatis.annotations.Insert;
-import org.apache.ibatis.annotations.Mapper;
-import org.apache.ibatis.annotations.Options;
-import org.apache.ibatis.annotations.Select;
+import org.apache.ibatis.annotations.*;
 
 import java.time.LocalDate;
 import java.util.List;
@@ -13,6 +10,8 @@ import java.util.List;
 @Mapper
 public interface EmpMapper {
     // 查询员工总数量
+    //
+     //
     @Select("select count(*) from emp e left join dept d on e.dept_id=d.id")
     public Long count(String name, Integer gender, LocalDate begin, LocalDate end);
 
@@ -31,4 +30,6 @@ public interface EmpMapper {
     void deleteByIds(List<Integer> ids);
 
     Emp getById(Integer id);
+
+    void updateById(Emp emp);
 }

@@ -32,7 +32,7 @@ public class EmpController {
 
     @GetMapping
     public Result page(EmpQueryParam empQueryParam){
-        log.info("分页查询：{},{},{},{},{},{}",empQueryParam);
+        log.info("分页查询：{}",empQueryParam);
         PageResult<Emp> pageResultesult = empService.page(empQueryParam);
         return Result.success(pageResultesult);
     }
@@ -57,4 +57,12 @@ public class EmpController {
         Emp emp = empService.getInfo(id);
         return Result.success(emp);
     }
+    //修改员工
+    @PutMapping
+    public Result update(@RequestBody Emp emp){
+        log.info("修改员工：{}", emp);
+        empService.update(emp);
+        return Result.success();
+    }
+
 }

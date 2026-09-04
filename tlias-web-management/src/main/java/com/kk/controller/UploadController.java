@@ -19,11 +19,21 @@ public class UploadController {
     public Result upload(String name, Integer age, MultipartFile file) throws IOException {
         log.info("上传文件，姓名：{}，年龄：{}, 文件名：{}", name, age, file);
         //保存文件
-        String extension = file.getOriginalFilename().substring(file.getOriginalFilename().lastIndexOf("."));
-
+        String originalFilename = file.getOriginalFilename();
+        if (originalFilename == null) {
+            return Result.error("文件名无效");
+        }
+        int dotIndex = originalFilename.lastIndexOf(".");
+        String extension = dotIndex > 0 ? originalFilename.substring(dotIndex) : "";
         String newFileName = UUID.randomUUID().toString() + extension;
-        file.transferTo(new File("D:/upload/", newFileName));
 
-        return Result.success();
+        File destDir = new File("D:/upload/");
+        if (!destDir.exists()) {
+            destDir.mkdirs();
+        }
+        file.transferTo(new File(destDir, newFileName));
+
+        // 返回上传后的可访问 URL（相对路径，经 WebMvcConfig 静态映射对外暴露）
+        return Result.success("/upload/" + newFileName);
     }
 }
