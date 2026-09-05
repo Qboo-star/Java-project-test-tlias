@@ -86,3 +86,214 @@ h6,
   opacity: 0;
   transform: translateY(-8px);
 }
+
+/* ===== 精致版确认框（全局，非 scoped） ===== */
+/* 遮罩层 flex 居中 */
+.el-overlay-message-box {
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  background: rgba(15, 23, 42, 0.5) !important;
+  backdrop-filter: blur(3px);
+  animation: tlias-overlay-in 0.2s ease;
+}
+@keyframes tlias-overlay-in {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+/* 对话框容器 */
+.tlias-confirm-box {
+  width: 400px;
+  border-radius: 20px !important;
+  border: none !important;
+  box-shadow: 0 25px 60px -15px rgba(15, 23, 42, 0.35),
+    0 10px 20px -5px rgba(15, 23, 42, 0.08) !important;
+  overflow: hidden;
+  padding: 0 !important;
+  background: #fff !important;
+  margin: 0 auto !important;
+  animation: tlias-confirm-in 0.3s cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+@keyframes tlias-confirm-in {
+  from {
+    opacity: 0;
+    transform: scale(0.9) translateY(-10px);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1) translateY(0);
+  }
+}
+
+/* 各区域强制不透明白底 */
+.tlias-confirm-box,
+.tlias-confirm-box .el-message-box__content,
+.tlias-confirm-box .el-message-box__header,
+.tlias-confirm-box .el-message-box__footer {
+  background: #fff !important;
+}
+.tlias-confirm-box .el-message-box__header {
+  padding: 0 !important;
+  height: 0;
+}
+.tlias-confirm-box .el-message-box__content {
+  padding: 0 !important;
+}
+.tlias-confirm-box .el-message-box__headerbtn {
+  top: 14px;
+  right: 14px;
+  z-index: 10;
+  opacity: 0.4;
+  transition: opacity 0.2s;
+}
+.tlias-confirm-box .el-message-box__headerbtn:hover {
+  opacity: 1;
+}
+.tlias-confirm-box .el-message-box__footer {
+  padding: 0 32px 28px !important;
+  border-top: none !important;
+  justify-content: center;
+  gap: 12px;
+}
+.tlias-confirm-box .el-message-box__btns {
+  width: 100%;
+  display: flex;
+  gap: 12px;
+}
+.tlias-confirm-box .el-message-box__btns .el-button {
+  flex: 1;
+  margin-left: 0 !important;
+}
+
+/* 内容体：垂直居中布局 */
+.tlias-confirm-body {
+  text-align: center;
+  padding: 0 0 8px;
+}
+.tlias-confirm-bar {
+  height: 5px;
+  width: 100%;
+}
+.tlias-confirm-icon-wrap {
+  display: flex;
+  justify-content: center;
+  padding: 32px 0 20px;
+}
+.tlias-confirm-icon {
+  width: 64px;
+  height: 64px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #fff;
+  font-size: 32px;
+  position: relative;
+}
+.tlias-confirm-icon::before {
+  content: "";
+  position: absolute;
+  inset: -8px;
+  border-radius: 50%;
+  background: inherit;
+  opacity: 0.15;
+  z-index: -1;
+}
+.tlias-confirm-icon svg {
+  width: 34px;
+  height: 34px;
+}
+.tlias-confirm-title {
+  font-size: 19px;
+  font-weight: 700;
+  color: #0f172a;
+  font-family: "Sora", "Noto Sans SC", sans-serif;
+  padding: 0 32px;
+  margin-bottom: 8px;
+}
+.tlias-confirm-desc {
+  font-size: 14px;
+  color: #64748b;
+  line-height: 1.6;
+  padding: 0 32px;
+  margin-bottom: 8px;
+}
+
+/* 按钮 */
+.tlias-confirm-cancel {
+  border-radius: 10px !important;
+  padding: 11px 24px !important;
+  font-weight: 600 !important;
+  font-size: 14px !important;
+  background: #f1f5f9 !important;
+  border: none !important;
+  color: #475569 !important;
+  transition: all 0.2s !important;
+}
+.tlias-confirm-cancel:hover {
+  background: #e2e8f0 !important;
+  color: #1e293b !important;
+}
+.tlias-confirm-btn {
+  border-radius: 10px !important;
+  padding: 11px 24px !important;
+  font-weight: 600 !important;
+  font-size: 14px !important;
+  border: none !important;
+  transition: all 0.2s !important;
+}
+.tlias-confirm-btn-danger {
+  background: linear-gradient(135deg, #ef4444, #dc2626) !important;
+  box-shadow: 0 6px 14px -2px rgba(239, 68, 68, 0.4) !important;
+}
+.tlias-confirm-btn-danger:hover {
+  background: linear-gradient(135deg, #f87171, #ef4444) !important;
+  box-shadow: 0 8px 18px -2px rgba(239, 68, 68, 0.5) !important;
+  transform: translateY(-1px);
+}
+.tlias-confirm-btn-warning {
+  background: linear-gradient(135deg, #f59e0b, #d97706) !important;
+  box-shadow: 0 6px 14px -2px rgba(245, 158, 11, 0.4) !important;
+}
+.tlias-confirm-btn-warning:hover {
+  background: linear-gradient(135deg, #fbbf24, #f59e0b) !important;
+  box-shadow: 0 8px 18px -2px rgba(245, 158, 11, 0.5) !important;
+  transform: translateY(-1px);
+}
+
+/* ===== 登录页背景动画 ===== */
+.tlias-login-bg {
+  position: relative;
+  overflow: hidden;
+}
+.tlias-login-bg::before,
+.tlias-login-bg::after {
+  content: "";
+  position: absolute;
+  border-radius: 50%;
+  filter: blur(80px);
+  opacity: 0.5;
+  z-index: 0;
+}
+.tlias-login-bg::before {
+  width: 480px;
+  height: 480px;
+  background: radial-gradient(circle, #14b8a6, transparent 70%);
+  top: -120px;
+  right: -120px;
+  animation: tlias-float 12s ease-in-out infinite;
+}
+.tlias-login-bg::after {
+  width: 380px;
+  height: 380px;
+  background: radial-gradient(circle, #f59e0b, transparent 70%);
+  bottom: -100px;
+  left: -100px;
+  animation: tlias-float 14s ease-in-out infinite reverse;
+}
+@keyframes tlias-float {
+  0%, 100% { transform: translate(0, 0); }
+  50% { transform: translate(40px, 30px); }
+}
+

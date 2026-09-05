@@ -1,7 +1,8 @@
 <script setup lang="ts">
 import { ref, reactive, onMounted } from 'vue'
-import { ElMessage, ElMessageBox } from 'element-plus'
+import { ElMessage } from 'element-plus'
 import { Plus, Refresh, Edit, Delete } from '@element-plus/icons-vue'
+import { confirmDelete } from '@/utils/confirm'
 import {
   getDeptList,
   getDeptById,
@@ -83,8 +84,11 @@ async function submit() {
 }
 
 async function handleDelete(row: Dept) {
-  await ElMessageBox.confirm(`确认删除部门「${row.name}」吗？`, '提示', {
-    type: 'warning',
+  await confirmDelete({
+    title: '确认删除部门',
+    message: `确认删除部门「${row.name}」吗？删除后相关数据将无法恢复。`,
+    confirmText: '确认删除',
+    type: 'danger',
   })
   await deleteDept(row.id)
   ElMessage.success('删除成功')

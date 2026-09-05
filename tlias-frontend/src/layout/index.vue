@@ -1,6 +1,7 @@
 <script setup lang="ts">
 import { ref, computed } from 'vue'
 import { useRoute, useRouter } from 'vue-router'
+import { ElMessage } from 'element-plus'
 import {
   OfficeBuilding,
   User,
@@ -8,7 +9,13 @@ import {
   Fold,
   Expand,
   Refresh,
+  School,
+  Avatar,
+  TrendCharts,
+  SwitchButton,
+  Setting,
 } from '@element-plus/icons-vue'
+import { confirmDelete } from '@/utils/confirm'
 
 const route = useRoute()
 const router = useRouter()
@@ -20,6 +27,9 @@ const isCollapse = ref(false)
 const menus = [
   { path: '/depts', title: '部门管理', icon: OfficeBuilding },
   { path: '/emps', title: '员工管理', icon: User },
+  { path: '/clazzs', title: '班级管理', icon: School },
+  { path: '/students', title: '学员管理', icon: Avatar },
+  { path: '/reports', title: '数据统计', icon: TrendCharts },
   { path: '/upload', title: '文件上传', icon: Upload },
 ]
 
@@ -29,8 +39,24 @@ const activeMenu = computed(() => route.path)
 // 面包屑标题
 const currentTitle = computed(() => (route.meta.title as string) || '')
 
+// 当前用户名
+const username = computed(() => localStorage.getItem('tlias_user') || '管理员')
+
 function handleRefresh() {
   router.replace({ path: '/redirect' + route.fullPath })
+}
+
+async function handleLogout() {
+  await confirmDelete({
+    title: '确认退出登录',
+    message: '退出后需要重新登录才能继续访问系统。',
+    confirmText: '退出登录',
+    type: 'warning',
+  })
+  localStorage.removeItem('tlias_token')
+  localStorage.removeItem('tlias_user')
+  ElMessage.success('已退出登录')
+  router.replace('/login')
 }
 </script>
 
@@ -76,6 +102,20 @@ function handleRefresh() {
               <Refresh />
             </el-icon>
           </el-tooltip>
+          <el-dropdown trigger="click">
+            <div class="user-box">
+              <div class="avatar">{{ username.charAt(0).toUpperCase() }}</div>
+              <span class="user-name">{{ username }}</span>
+            </div>
+            <template #dropdown>
+              <el-dropdown-menu>
+                <el-dropdown-item :icon="Setting">个人设置</el-dropdown-item>
+                <el-dropdown-item :icon="SwitchButton" divided @click="handleLogout">
+                  退出登录
+                </el-dropdown-item>
+              </el-dropdown-menu>
+            </template>
+          </el-dropdown>
         </div>
       </el-header>
 
@@ -140,6 +180,11 @@ function handleRefresh() {
   align-items: center;
   gap: 16px;
 }
+.header-right {
+  display: flex;
+  align-items: center;
+  gap: 18px;
+}
 .collapse-btn,
 .header-icon {
   font-size: 20px;
@@ -150,6 +195,35 @@ function handleRefresh() {
 .collapse-btn:hover,
 .header-icon:hover {
   color: #0d9488;
+}
+.user-box {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  cursor: pointer;
+  padding: 4px 8px;
+  border-radius: 8px;
+  transition: background 0.2s;
+}
+.user-box:hover {
+  background: #f1f5f9;
+}
+.avatar {
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, #0d9488, #14b8a6);
+  color: #fff;
+  font-size: 13px;
+  font-weight: 700;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.user-name {
+  font-size: 13px;
+  color: #334155;
+  font-weight: 500;
 }
 .main {
   background-color: #f8fafc;

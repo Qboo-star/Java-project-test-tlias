@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.kk.mapper.StudentMapper">
+
+    <!-- 条件分页查询：左联班级表，返回班级名称 -->
+    <select id="list" resultType="com.kk.pojo.Student">
+        SELECT s.*, c.name AS clazz_name
+        FROM student s
+        LEFT JOIN clazz c ON s.clazz_id = c.id
+        <where>
+            <!-- 姓名模糊查询 -->
+            <if test="name != null and name != ''">
+                AND s.name LIKE CONCAT('%', #{name}, '%')
+            </if>
+            <!-- 学号模糊查询 -->
+            <if test="no != null and no != ''">
+                AND s.no LIKE CONCAT('%', #{no}, '%')
+            </if>
+            <!-- 班级ID精确筛选 -->
+            <if test="clazzId != null">
+                AND s.clazz_id = #{clazzId}
+            </if>
+        </where>
+        ORDER BY s.update_time DESC
+    </select>
+
+    <!-- 根据ID查询学员详情 -->
+    <select id="getById" resultType="com.kk.pojo.Student">
+        SELECT s.*, c.name AS clazz_name
+        FROM student s
+                 LEFT JOIN clazz c ON s.clazz_id = c.id
+        WHERE s.id = #{id}
+    </select>
+
+
+    <!--添加学员-->
+    <insert id="insert" parameterType="com.kk.pojo.Student">
+        INSERT INTO student (name, no, clazz_id) VALUES (#{name}, #{no}, #{clazzId})
+    </insert>
+
+    <!--修改学员-->
+    <update id="update" parameterType="com.kk.pojo.Student">
+        UPDATE student SET name = #{name}, no = #{no}, clazz_id = #{clazzId} WHERE id = #{id}
+    </update>
+
+    <!--//违纪处理-->
+    <!-- 违纪处理：次数+1，累加扣分，刷新修改时间 -->
+    <update id="violation">
+        UPDATE student
+        SET violation_count = violation_count + 1,
+            violation_score = violation_score + #{score},
+            update_time = NOW()
+        WHERE id = #{id}
+    </update>
+
+    <!-- 批量删除学员 -->
+    <delete id="deleteBatch">
+        DELETE FROM student
+        WHERE id IN
+        <foreach collection="list" item="id" open="(" separator="," close=")">
+            #{id}
+        </foreach>
+    </delete>
+
+
+
+</mapper>
