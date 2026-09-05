@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.kk.mapper.ReportMapper">
+
+    <!-- 员工性别统计：返回 gender(1男/2女), cnt -->
+    <select id="empGenderData" resultType="java.util.Map">
+        SELECT
+            CASE e.gender
+                WHEN 1 THEN '男性员工'
+                WHEN 2 THEN '女性员工'
+                ELSE '其他'
+            END AS name,
+            COUNT(*) AS value
+        FROM emp e
+        GROUP BY e.gender
+        ORDER BY e.gender
+    </select>
+
+    <!-- 员工职位人数统计：返回 job, cnt -->
+    <select id="empJobData" resultType="java.util.Map">
+        SELECT
+            IFNULL(job, 0) AS job,
+            COUNT(*) AS cnt
+        FROM emp
+        GROUP BY job
+        ORDER BY job
+    </select>
+
+    <!-- 学员学历统计：返回 degree, cnt -->
+    <select id="studentDegreeData" resultType="java.util.Map">
+        SELECT
+            IFNULL(degree, 0) AS degree,
+            COUNT(*) AS cnt
+        FROM student
+        GROUP BY degree
+        ORDER BY degree
+    </select>
+
+    <!-- 班级人数统计：返回 clazzName, cnt -->
+    <select id="studentCountData" resultType="java.util.Map">
+        SELECT
+            c.name AS clazzName,
+            COUNT(s.id) AS cnt
+        FROM clazz c
+        LEFT JOIN student s ON s.clazz_id = c.id
+        GROUP BY c.id, c.name
+        ORDER BY c.create_time DESC
+    </select>
+
+</mapper>

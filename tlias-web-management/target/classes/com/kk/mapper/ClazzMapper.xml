@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.kk.mapper.ClazzMapper">
+
+    <!-- 分页条件查询：关联员工表查班主任姓名 -->
+    <select id="pageQuery" resultType="com.kk.vo.ClazzVO">
+        SELECT
+        c.*,
+        e.name AS master_name
+        FROM clazz c
+        LEFT JOIN emp e ON c.master_id = e.id
+        <where>
+            <if test="name != null and name != ''">
+                AND c.name LIKE CONCAT('%', #{name}, '%')
+            </if>
+            <if test="begin != null">
+                AND c.begin_date >= #{begin}
+            </if>
+            <if test="end != null">
+                AND c.begin_date &lt;= #{end}
+            </if>
+        </where>
+
+        ORDER BY c.create_time DESC
+    </select>
+
+    <!-- 根据ID查询 -->
+    <select id="getById" resultType="com.kk.pojo.Clazz">
+        SELECT * FROM clazz WHERE id = #{id}
+    </select>
+
+    <!-- 查询所有班级 -->
+    <select id="listAll" resultType="com.kk.pojo.Clazz">
+        SELECT * FROM clazz ORDER BY create_time DESC
+    </select>
+
+    <!--新增班级-->
+    <insert id="insert" parameterType="com.kk.pojo.Clazz">
+        INSERT INTO clazz (name, room, begin_date, end_date, master_id, subject, create_time, update_time)
+        VALUES (#{name}, #{room}, #{beginDate}, #{endDate}, #{masterId}, #{subject}, #{createTime}, #{updateTime})
+    </insert>
+
+
+    <!--修改班级-->
+    <update id="update" parameterType="com.kk.pojo.Clazz">
+        UPDATE clazz
+        <set>
+            <if test="name != null and name != ''">
+                name = #{name},
+            </if>
+            <if test="room != null and room != ''">
+                room = #{room},
+            </if>
+            <if test="beginDate != null">
+                begin_date = #{beginDate},
+            </if>
+            <if test="endDate != null">
+                end_date = #{endDate},
+            </if>
+            <if test="masterId != null">
+                master_id = #{masterId},
+            </if>
+            <if test="subject != null and subject != ''">
+                subject = #{subject},
+            </if>
+            update_time = #{updateTime}
+        </set>
+        WHERE id = #{id}
+    </update>
+</mapper>

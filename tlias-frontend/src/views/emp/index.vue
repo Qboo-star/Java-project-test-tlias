@@ -1,7 +1,8 @@
 <script setup lang="ts">
 import { ref, reactive, onMounted } from 'vue'
-import { ElMessage, ElMessageBox } from 'element-plus'
+import { ElMessage } from 'element-plus'
 import { Plus, Refresh, Edit, Delete, Search } from '@element-plus/icons-vue'
+import { confirmDelete } from '@/utils/confirm'
 import {
   getEmpPage,
   getEmpById,
@@ -86,11 +87,12 @@ async function handleBatchDelete() {
     ElMessage.warning('请先选择要删除的员工')
     return
   }
-  await ElMessageBox.confirm(
-    `确认删除选中的 ${selectedIds.value.length} 名员工吗？`,
-    '提示',
-    { type: 'warning' },
-  )
+  await confirmDelete({
+    title: '批量删除员工',
+    message: `确认删除选中的 ${selectedIds.value.length} 名员工吗？删除后数据将无法恢复。`,
+    confirmText: '确认删除',
+    type: 'danger',
+  })
   await deleteEmp(selectedIds.value)
   ElMessage.success('删除成功')
   if (list.value.length === selectedIds.value.length && query.page! > 1) {
@@ -100,8 +102,11 @@ async function handleBatchDelete() {
 }
 
 async function handleDelete(row: Emp) {
-  await ElMessageBox.confirm(`确认删除员工「${row.name}」吗？`, '提示', {
-    type: 'warning',
+  await confirmDelete({
+    title: '确认删除员工',
+    message: `确认删除员工「${row.name}」吗？删除后数据将无法恢复。`,
+    confirmText: '确认删除',
+    type: 'danger',
   })
   await deleteEmp([row.id!])
   ElMessage.success('删除成功')
