@@ -5,11 +5,10 @@ import com.github.pagehelper.Page;
 import com.github.pagehelper.PageHelper;
 import com.kk.mapper.EmpExprMapper;
 import com.kk.mapper.EmpMapper;
-import com.kk.pojo.Emp;
-import com.kk.pojo.EmpExpr;
-import com.kk.pojo.EmpQueryParam;
-import com.kk.pojo.PageResult;
+import com.kk.pojo.*;
 import com.kk.service.EmpService;
+import com.kk.utils.JwtUtil;
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
@@ -18,8 +17,11 @@ import org.springframework.util.CollectionUtils;
 import java.time.LocalDate;
 import java.time.LocalDateTime;
 import java.util.Arrays;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
+@Slf4j
 @Service
 public class EmpServiceImpl implements EmpService {
     @Autowired
@@ -97,5 +99,23 @@ public class EmpServiceImpl implements EmpService {
             emp.getExprList().forEach(empExpr->empExpr.setEmpId(emp.getId()));
             empExprMapper.insertBatch(emp.getExprList());
         }
+    }
+
+    @Override
+    public LOginInfo login(Emp emp){
+        //根据用户名和密码查询员工信息
+        Emp e = empMapper.selectByUsernameAndPassword(emp);
+        //判断是否存在员工，存在则组装员工信息
+        if(e!=null){
+            log.info("登陆成功 {}", e);
+            //生成JWT
+            Map<String, Object> claims = new HashMap<>();
+            claims.put("id", e.getId());
+            claims.put("username", e.getUsername());
+            String jwt=JwtUtil.generateToken(claims);
+            return new LOginInfo(e.getId(), e.getUsername(), e.getName(),jwt);
+        }
+        //不存在则null
+        return null;
     }
 }

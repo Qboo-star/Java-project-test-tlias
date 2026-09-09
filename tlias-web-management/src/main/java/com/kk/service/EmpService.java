@@ -2,6 +2,7 @@ package com.kk.service;
 
 import com.kk.pojo.Emp;
 import com.kk.pojo.EmpQueryParam;
+import com.kk.pojo.LOginInfo;
 import com.kk.pojo.PageResult;
 import org.springframework.format.annotation.DateTimeFormat;
 
@@ -21,4 +22,6 @@ public interface EmpService {
     Emp getInfo(Integer id);
 
     void update(Emp emp);
+
+    LOginInfo login(Emp emp);
 }
