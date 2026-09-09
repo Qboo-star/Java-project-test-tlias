@@ -1,52 +1,283 @@
-2026-09-06T16:09:16.503+08:00 INFO  --- [main] com.kk.TliasWebManagementApplication               : Starting TliasWebManagementApplication using Java 23.0.2 with PID 39416 (D:\web_ai_code\Web-ai-project-03\tlias-web-management\target\classes started by 28428 in D:\web_ai_code\Web-ai-project-03)
-2026-09-06T16:09:16.608+08:00 INFO  --- [main] com.kk.TliasWebManagementApplication               : No active profile set, falling back to 1 default profile: "default"
-2026-09-06T16:09:18.486+08:00 INFO  --- [main] o.s.boot.web.embedded.tomcat.TomcatWebServer       : Tomcat initialized with port 8080 (http)
-2026-09-06T16:09:18.508+08:00 INFO  --- [main] org.apache.coyote.http11.Http11NioProtocol         : Initializing ProtocolHandler ["http-nio-8080"]
-2026-09-06T16:09:18.510+08:00 INFO  --- [main] org.apache.catalina.core.StandardService           : Starting service [Tomcat]
-2026-09-06T16:09:18.510+08:00 INFO  --- [main] org.apache.catalina.core.StandardEngine            : Starting Servlet engine: [Apache Tomcat/10.1.34]
-2026-09-06T16:09:18.604+08:00 INFO  --- [main] o.a.c.core.ContainerBase.[Tomcat].[localhost].[/]  : Initializing Spring embedded WebApplicationContext
-2026-09-06T16:09:18.605+08:00 INFO  --- [main] o.s.b.w.s.c.ServletWebServerApplicationContext     : Root WebApplicationContext: initialization completed in 1862 ms
-2026-09-06T16:09:19.802+08:00 INFO  --- [main] org.apache.coyote.http11.Http11NioProtocol         : Starting ProtocolHandler ["http-nio-8080"]
-2026-09-06T16:09:19.833+08:00 INFO  --- [main] o.s.boot.web.embedded.tomcat.TomcatWebServer       : Tomcat started on port 8080 (http) with context path '/'
-2026-09-06T16:09:19.842+08:00 INFO  --- [main] com.kk.TliasWebManagementApplication               : Started TliasWebManagementApplication in 4.012 seconds (process running for 5.337)
-2026-09-06T16:11:10.899+08:00 INFO  --- [http-nio-8080-exec-1] o.a.c.core.ContainerBase.[Tomcat].[localhost].[/]  : Initializing Spring DispatcherServlet 'dispatcherServlet'
-2026-09-06T16:11:10.900+08:00 INFO  --- [http-nio-8080-exec-1] org.springframework.web.servlet.DispatcherServlet  : Initializing Servlet 'dispatcherServlet'
-2026-09-06T16:11:10.901+08:00 INFO  --- [http-nio-8080-exec-1] org.springframework.web.servlet.DispatcherServlet  : Completed initialization in 1 ms
-2026-09-06T16:11:10.973+08:00 INFO  --- [http-nio-8080-exec-1] com.kk.controller.LoginController                  : login Emp(id=null, username=null, password=null, name=null, gender=null, phone=null, job=null, salary=null, image=null, entryDate=null, deptId=null, createTime=null, updateTime=null, deptName=null, exprList=null)
-2026-09-06T16:11:11.017+08:00 INFO  --- [http-nio-8080-exec-1] com.zaxxer.hikari.HikariDataSource                 : HikariPool-1 - Starting...
-2026-09-06T16:11:11.776+08:00 INFO  --- [http-nio-8080-exec-1] com.zaxxer.hikari.pool.HikariPool                  : HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@25492de7
-2026-09-06T16:11:11.780+08:00 INFO  --- [http-nio-8080-exec-1] com.zaxxer.hikari.HikariDataSource                 : HikariPool-1 - Start completed.
-2026-09-06T16:12:32.951+08:00 INFO  --- [http-nio-8080-exec-5] com.kk.controller.LoginController                  : login Emp(id=null, username=null, password=null, name=null, gender=null, phone=null, job=null, salary=null, image=null, entryDate=null, deptId=null, createTime=null, updateTime=null, deptName=null, exprList=null)
-2026-09-06T16:12:56.932+08:00 INFO  --- [http-nio-8080-exec-6] com.kk.controller.LoginController                  : login Emp(id=null, username=null, password=null, name=null, gender=null, phone=null, job=null, salary=null, image=null, entryDate=null, deptId=null, createTime=null, updateTime=null, deptName=null, exprList=null)
-2026-09-06T16:13:16.581+08:00 INFO  --- [http-nio-8080-exec-7] com.kk.controller.LoginController                  : login Emp(id=null, username=null, password=null, name=null, gender=null, phone=null, job=null, salary=null, image=null, entryDate=null, deptId=null, createTime=null, updateTime=null, deptName=null, exprList=null)
-2026-09-06T16:18:19.637+08:00 INFO  --- [SpringApplicationShutdownHook] o.s.boot.web.embedded.tomcat.GracefulShutdown      : Commencing graceful shutdown. Waiting for active requests to complete
-2026-09-06T16:18:19.644+08:00 INFO  --- [tomcat-shutdown] o.s.boot.web.embedded.tomcat.GracefulShutdown      : Graceful shutdown complete
-2026-09-06T16:18:19.650+08:00 INFO  --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource                 : HikariPool-1 - Shutdown initiated...
-2026-09-06T16:18:19.661+08:00 INFO  --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource                 : HikariPool-1 - Shutdown completed.
-2026-09-06T16:18:25.552+08:00 INFO  --- [main] com.kk.TliasWebManagementApplication               : Starting TliasWebManagementApplication using Java 23.0.2 with PID 9608 (D:\web_ai_code\Web-ai-project-03\tlias-web-management\target\classes started by 28428 in D:\web_ai_code\Web-ai-project-03)
-2026-09-06T16:18:25.554+08:00 INFO  --- [main] com.kk.TliasWebManagementApplication               : No active profile set, falling back to 1 default profile: "default"
-2026-09-06T16:18:27.094+08:00 INFO  --- [main] o.s.boot.web.embedded.tomcat.TomcatWebServer       : Tomcat initialized with port 8080 (http)
-2026-09-06T16:18:27.116+08:00 INFO  --- [main] org.apache.coyote.http11.Http11NioProtocol         : Initializing ProtocolHandler ["http-nio-8080"]
-2026-09-06T16:18:27.119+08:00 INFO  --- [main] org.apache.catalina.core.StandardService           : Starting service [Tomcat]
-2026-09-06T16:18:27.121+08:00 INFO  --- [main] org.apache.catalina.core.StandardEngine            : Starting Servlet engine: [Apache Tomcat/10.1.34]
-2026-09-06T16:18:27.212+08:00 INFO  --- [main] o.a.c.core.ContainerBase.[Tomcat].[localhost].[/]  : Initializing Spring embedded WebApplicationContext
-2026-09-06T16:18:27.213+08:00 INFO  --- [main] o.s.b.w.s.c.ServletWebServerApplicationContext     : Root WebApplicationContext: initialization completed in 1595 ms
-2026-09-06T16:18:28.349+08:00 INFO  --- [main] org.apache.coyote.http11.Http11NioProtocol         : Starting ProtocolHandler ["http-nio-8080"]
-2026-09-06T16:18:28.377+08:00 INFO  --- [main] o.s.boot.web.embedded.tomcat.TomcatWebServer       : Tomcat started on port 8080 (http) with context path '/'
-2026-09-06T16:18:28.388+08:00 INFO  --- [main] com.kk.TliasWebManagementApplication               : Started TliasWebManagementApplication in 3.332 seconds (process running for 4.414)
-2026-09-06T16:18:30.380+08:00 INFO  --- [http-nio-8080-exec-2] o.a.c.core.ContainerBase.[Tomcat].[localhost].[/]  : Initializing Spring DispatcherServlet 'dispatcherServlet'
-2026-09-06T16:18:30.380+08:00 INFO  --- [http-nio-8080-exec-2] org.springframework.web.servlet.DispatcherServlet  : Initializing Servlet 'dispatcherServlet'
-2026-09-06T16:18:30.381+08:00 INFO  --- [http-nio-8080-exec-2] org.springframework.web.servlet.DispatcherServlet  : Completed initialization in 1 ms
-2026-09-06T16:18:30.590+08:00 INFO  --- [http-nio-8080-exec-2] com.kk.controller.LoginController                  : login Emp(id=null, username=zhangsan, password=123456, name=null, gender=null, phone=null, job=null, salary=null, image=null, entryDate=null, deptId=null, createTime=null, updateTime=null, deptName=null, exprList=null)
-2026-09-06T16:18:30.631+08:00 INFO  --- [http-nio-8080-exec-2] com.zaxxer.hikari.HikariDataSource                 : HikariPool-1 - Starting...
-2026-09-06T16:18:31.309+08:00 INFO  --- [http-nio-8080-exec-2] com.zaxxer.hikari.pool.HikariPool                  : HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@771b20d0
-2026-09-06T16:18:31.311+08:00 INFO  --- [http-nio-8080-exec-2] com.zaxxer.hikari.HikariDataSource                 : HikariPool-1 - Start completed.
-2026-09-06T16:18:31.485+08:00 INFO  --- [http-nio-8080-exec-2] com.kk.service.impl.EmpServiceImpl                 : 登陆成功 Emp(id=1, username=zhangsan, password=null, name=张三, gender=null, phone=null, job=null, salary=null, image=null, entryDate=null, deptId=null, createTime=null, updateTime=null, deptName=null, exprList=null)
-2026-09-06T16:23:13.196+08:00 INFO  --- [http-nio-8080-exec-5] com.kk.controller.LoginController                  : login Emp(id=null, username=zhangsan, password=123456, name=null, gender=null, phone=null, job=null, salary=null, image=null, entryDate=null, deptId=null, createTime=null, updateTime=null, deptName=null, exprList=null)
-2026-09-06T16:23:13.248+08:00 INFO  --- [http-nio-8080-exec-5] com.kk.service.impl.EmpServiceImpl                 : 登陆成功 Emp(id=1, username=zhangsan, password=null, name=张三, gender=null, phone=null, job=null, salary=null, image=null, entryDate=null, deptId=null, createTime=null, updateTime=null, deptName=null, exprList=null)
-2026-09-06T16:23:25.445+08:00 INFO  --- [http-nio-8080-exec-7] com.kk.controller.LoginController                  : login Emp(id=null, username=lisi, password=123456, name=null, gender=null, phone=null, job=null, salary=null, image=null, entryDate=null, deptId=null, createTime=null, updateTime=null, deptName=null, exprList=null)
-2026-09-06T16:23:25.451+08:00 INFO  --- [http-nio-8080-exec-7] com.kk.service.impl.EmpServiceImpl                 : 登陆成功 Emp(id=2, username=lisi, password=null, name=李四, gender=null, phone=null, job=null, salary=null, image=null, entryDate=null, deptId=null, createTime=null, updateTime=null, deptName=null, exprList=null)
-2026-09-06T16:24:23.222+08:00 INFO  --- [SpringApplicationShutdownHook] o.s.boot.web.embedded.tomcat.GracefulShutdown      : Commencing graceful shutdown. Waiting for active requests to complete
-2026-09-06T16:24:23.232+08:00 INFO  --- [tomcat-shutdown] o.s.boot.web.embedded.tomcat.GracefulShutdown      : Graceful shutdown complete
-2026-09-06T16:24:23.239+08:00 INFO  --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource                 : HikariPool-1 - Shutdown initiated...
-2026-09-06T16:24:23.251+08:00 INFO  --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource                 : HikariPool-1 - Shutdown completed.
+2026-09-09T20:05:35.929+08:00 INFO  --- [main] com.kk.TliasWebManagementApplication               : Starting TliasWebManagementApplication using Java 23.0.2 with PID 14772 (D:\web_ai_code\Web-ai-project-03\tlias-web-management\target\classes started by 28428 in D:\web_ai_code\Web-ai-project-03)
+2026-09-09T20:05:35.938+08:00 INFO  --- [main] com.kk.TliasWebManagementApplication               : No active profile set, falling back to 1 default profile: "default"
+2026-09-09T20:05:37.861+08:00 INFO  --- [main] o.s.boot.web.embedded.tomcat.TomcatWebServer       : Tomcat initialized with port 8080 (http)
+2026-09-09T20:05:37.885+08:00 INFO  --- [main] org.apache.coyote.http11.Http11NioProtocol         : Initializing ProtocolHandler ["http-nio-8080"]
+2026-09-09T20:05:37.888+08:00 INFO  --- [main] org.apache.catalina.core.StandardService           : Starting service [Tomcat]
+2026-09-09T20:05:37.888+08:00 INFO  --- [main] org.apache.catalina.core.StandardEngine            : Starting Servlet engine: [Apache Tomcat/10.1.34]
+2026-09-09T20:05:37.973+08:00 INFO  --- [main] o.a.c.core.ContainerBase.[Tomcat].[localhost].[/]  : Initializing Spring embedded WebApplicationContext
+2026-09-09T20:05:37.973+08:00 INFO  --- [main] o.s.b.w.s.c.ServletWebServerApplicationContext     : Root WebApplicationContext: initialization completed in 1977 ms
+2026-09-09T20:05:39.031+08:00 INFO  --- [main] org.apache.coyote.http11.Http11NioProtocol         : Starting ProtocolHandler ["http-nio-8080"]
+2026-09-09T20:05:39.056+08:00 INFO  --- [main] o.s.boot.web.embedded.tomcat.TomcatWebServer       : Tomcat started on port 8080 (http) with context path '/'
+2026-09-09T20:05:39.064+08:00 INFO  --- [main] com.kk.TliasWebManagementApplication               : Started TliasWebManagementApplication in 3.602 seconds (process running for 4.627)
+2026-09-09T20:07:39.989+08:00 INFO  --- [http-nio-8080-exec-2] o.a.c.core.ContainerBase.[Tomcat].[localhost].[/]  : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2026-09-09T20:07:39.989+08:00 INFO  --- [http-nio-8080-exec-2] org.springframework.web.servlet.DispatcherServlet  : Initializing Servlet 'dispatcherServlet'
+2026-09-09T20:07:39.990+08:00 INFO  --- [http-nio-8080-exec-2] org.springframework.web.servlet.DispatcherServlet  : Completed initialization in 1 ms
+2026-09-09T20:07:40.023+08:00 WARN  --- [http-nio-8080-exec-2] o.s.w.s.m.support.DefaultHandlerExceptionResolver  : Resolved [org.springframework.web.HttpRequestMethodNotSupportedException: Request method 'GET' is not supported]
+2026-09-09T20:08:36.991+08:00 INFO  --- [http-nio-8080-exec-3] com.kk.controller.LoginController                  : login Emp(id=null, username=zhangsan, password=123456, name=null, gender=null, phone=null, job=null, salary=null, image=null, entryDate=null, deptId=null, createTime=null, updateTime=null, deptName=null, exprList=null)
+2026-09-09T20:08:37.031+08:00 INFO  --- [http-nio-8080-exec-3] com.zaxxer.hikari.HikariDataSource                 : HikariPool-1 - Starting...
+2026-09-09T20:08:37.649+08:00 INFO  --- [http-nio-8080-exec-3] com.zaxxer.hikari.pool.HikariPool                  : HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@7c2ba4e
+2026-09-09T20:08:37.652+08:00 INFO  --- [http-nio-8080-exec-3] com.zaxxer.hikari.HikariDataSource                 : HikariPool-1 - Start completed.
+2026-09-09T20:08:37.750+08:00 INFO  --- [http-nio-8080-exec-3] com.kk.service.impl.EmpServiceImpl                 : 登陆成功 Emp(id=1, username=zhangsan, password=null, name=张三, gender=null, phone=null, job=null, salary=null, image=null, entryDate=null, deptId=null, createTime=null, updateTime=null, deptName=null, exprList=null)
+2026-09-09T20:08:37.774+08:00 ERROR --- [http-nio-8080-exec-3] o.a.c.c.C.[.[localhost].[/].[dispatcherServlet]    : Servlet.service() for servlet [dispatcherServlet] in context with path [] threw exception [Handler dispatch failed: java.lang.NoClassDefFoundError: javax/xml/bind/DatatypeConverter] with root cause
+java.lang.ClassNotFoundException: javax.xml.bind.DatatypeConverter
+	at java.base/jdk.internal.loader.BuiltinClassLoader.loadClass(BuiltinClassLoader.java:641)
+	at java.base/jdk.internal.loader.ClassLoaders$AppClassLoader.loadClass(ClassLoaders.java:188)
+	at java.base/java.lang.ClassLoader.loadClass(ClassLoader.java:528)
+	at io.jsonwebtoken.impl.Base64Codec.decode(Base64Codec.java:26)
+	at io.jsonwebtoken.impl.DefaultJwtBuilder.signWith(DefaultJwtBuilder.java:99)
+	at com.kk.utils.JwtUtil.generateToken(JwtUtil.java:22)
+	at com.kk.service.impl.EmpServiceImpl.login(EmpServiceImpl.java:115)
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:580)
+	at org.springframework.aop.support.AopUtils.invokeJoinpointUsingReflection(AopUtils.java:359)
+	at org.springframework.aop.framework.CglibAopProxy$DynamicAdvisedInterceptor.intercept(CglibAopProxy.java:723)
+	at com.kk.service.impl.EmpServiceImpl$$SpringCGLIB$$0.login(<generated>)
+	at com.kk.controller.LoginController.login(LoginController.java:26)
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:580)
+	at org.springframework.web.method.support.InvocableHandlerMethod.doInvoke(InvocableHandlerMethod.java:257)
+	at org.springframework.web.method.support.InvocableHandlerMethod.invokeForRequest(InvocableHandlerMethod.java:190)
+	at org.springframework.web.servlet.mvc.method.annotation.ServletInvocableHandlerMethod.invokeAndHandle(ServletInvocableHandlerMethod.java:118)
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.invokeHandlerMethod(RequestMappingHandlerAdapter.java:986)
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.handleInternal(RequestMappingHandlerAdapter.java:891)
+	at org.springframework.web.servlet.mvc.method.AbstractHandlerMethodAdapter.handle(AbstractHandlerMethodAdapter.java:87)
+	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:1088)
+	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:978)
+	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:1014)
+	at org.springframework.web.servlet.FrameworkServlet.doPost(FrameworkServlet.java:914)
+	at jakarta.servlet.http.HttpServlet.service(HttpServlet.java:590)
+	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:885)
+	at jakarta.servlet.http.HttpServlet.service(HttpServlet.java:658)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:195)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140)
+	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:51)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:164)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140)
+	at org.springframework.web.filter.RequestContextFilter.doFilterInternal(RequestContextFilter.java:100)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:164)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140)
+	at org.springframework.web.filter.FormContentFilter.doFilterInternal(FormContentFilter.java:93)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:164)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140)
+	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:201)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:164)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140)
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:167)
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:90)
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:483)
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:115)
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:93)
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:74)
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:344)
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:397)
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:63)
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:905)
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1741)
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:52)
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1190)
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:659)
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:63)
+	at java.base/java.lang.Thread.run(Thread.java:1575)
+2026-09-09T20:10:35.103+08:00 INFO  --- [SpringApplicationShutdownHook] o.s.boot.web.embedded.tomcat.GracefulShutdown      : Commencing graceful shutdown. Waiting for active requests to complete
+2026-09-09T20:10:35.112+08:00 INFO  --- [tomcat-shutdown] o.s.boot.web.embedded.tomcat.GracefulShutdown      : Graceful shutdown complete
+2026-09-09T20:10:35.116+08:00 INFO  --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource                 : HikariPool-1 - Shutdown initiated...
+2026-09-09T20:10:35.127+08:00 INFO  --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource                 : HikariPool-1 - Shutdown completed.
+2026-09-09T20:11:51.568+08:00 INFO  --- [main] com.kk.TliasWebManagementApplication               : Starting TliasWebManagementApplication using Java 23.0.2 with PID 14292 (D:\web_ai_code\Web-ai-project-03\tlias-web-management\target\classes started by 28428 in D:\web_ai_code\Web-ai-project-03)
+2026-09-09T20:11:51.571+08:00 INFO  --- [main] com.kk.TliasWebManagementApplication               : No active profile set, falling back to 1 default profile: "default"
+2026-09-09T20:11:52.687+08:00 INFO  --- [main] o.s.boot.web.embedded.tomcat.TomcatWebServer       : Tomcat initialized with port 8080 (http)
+2026-09-09T20:11:52.705+08:00 INFO  --- [main] org.apache.coyote.http11.Http11NioProtocol         : Initializing ProtocolHandler ["http-nio-8080"]
+2026-09-09T20:11:52.707+08:00 INFO  --- [main] org.apache.catalina.core.StandardService           : Starting service [Tomcat]
+2026-09-09T20:11:52.707+08:00 INFO  --- [main] org.apache.catalina.core.StandardEngine            : Starting Servlet engine: [Apache Tomcat/10.1.34]
+2026-09-09T20:11:52.788+08:00 INFO  --- [main] o.a.c.core.ContainerBase.[Tomcat].[localhost].[/]  : Initializing Spring embedded WebApplicationContext
+2026-09-09T20:11:52.789+08:00 INFO  --- [main] o.s.b.w.s.c.ServletWebServerApplicationContext     : Root WebApplicationContext: initialization completed in 1169 ms
+2026-09-09T20:11:53.525+08:00 INFO  --- [main] org.apache.coyote.http11.Http11NioProtocol         : Starting ProtocolHandler ["http-nio-8080"]
+2026-09-09T20:11:53.547+08:00 INFO  --- [main] o.s.boot.web.embedded.tomcat.TomcatWebServer       : Tomcat started on port 8080 (http) with context path '/'
+2026-09-09T20:11:53.555+08:00 INFO  --- [main] com.kk.TliasWebManagementApplication               : Started TliasWebManagementApplication in 2.359 seconds (process running for 3.233)
+2026-09-09T20:11:59.052+08:00 INFO  --- [http-nio-8080-exec-2] o.a.c.core.ContainerBase.[Tomcat].[localhost].[/]  : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2026-09-09T20:11:59.052+08:00 INFO  --- [http-nio-8080-exec-2] org.springframework.web.servlet.DispatcherServlet  : Initializing Servlet 'dispatcherServlet'
+2026-09-09T20:11:59.053+08:00 INFO  --- [http-nio-8080-exec-2] org.springframework.web.servlet.DispatcherServlet  : Completed initialization in 1 ms
+2026-09-09T20:11:59.178+08:00 INFO  --- [http-nio-8080-exec-2] com.kk.controller.LoginController                  : login Emp(id=null, username=zhangsan, password=123456, name=null, gender=null, phone=null, job=null, salary=null, image=null, entryDate=null, deptId=null, createTime=null, updateTime=null, deptName=null, exprList=null)
+2026-09-09T20:11:59.211+08:00 INFO  --- [http-nio-8080-exec-2] com.zaxxer.hikari.HikariDataSource                 : HikariPool-1 - Starting...
+2026-09-09T20:11:59.656+08:00 INFO  --- [http-nio-8080-exec-2] com.zaxxer.hikari.pool.HikariPool                  : HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@2595aafa
+2026-09-09T20:11:59.658+08:00 INFO  --- [http-nio-8080-exec-2] com.zaxxer.hikari.HikariDataSource                 : HikariPool-1 - Start completed.
+2026-09-09T20:11:59.747+08:00 INFO  --- [http-nio-8080-exec-2] com.kk.service.impl.EmpServiceImpl                 : 登陆成功 Emp(id=1, username=zhangsan, password=null, name=张三, gender=null, phone=null, job=null, salary=null, image=null, entryDate=null, deptId=null, createTime=null, updateTime=null, deptName=null, exprList=null)
+2026-09-09T20:11:59.756+08:00 ERROR --- [http-nio-8080-exec-2] o.a.c.c.C.[.[localhost].[/].[dispatcherServlet]    : Servlet.service() for servlet [dispatcherServlet] in context with path [] threw exception [Request processing failed: io.jsonwebtoken.security.WeakKeyException: The specified key byte array is 192 bits which is not secure enough for any JWT HMAC-SHA algorithm.  The JWT JWA Specification (RFC 7518, Section 3.2) states that keys used with HMAC-SHA algorithms MUST have a size >= 256 bits (the key size must be greater than or equal to the hash output size).  Consider using the Jwts.SIG.HS256.key() builder (or HS384.key() or HS512.key()) to create a key guaranteed to be secure enough for your preferred HMAC-SHA algorithm.  See https://tools.ietf.org/html/rfc7518#section-3.2 for more information.] with root cause
+io.jsonwebtoken.security.WeakKeyException: The specified key byte array is 192 bits which is not secure enough for any JWT HMAC-SHA algorithm.  The JWT JWA Specification (RFC 7518, Section 3.2) states that keys used with HMAC-SHA algorithms MUST have a size >= 256 bits (the key size must be greater than or equal to the hash output size).  Consider using the Jwts.SIG.HS256.key() builder (or HS384.key() or HS512.key()) to create a key guaranteed to be secure enough for your preferred HMAC-SHA algorithm.  See https://tools.ietf.org/html/rfc7518#section-3.2 for more information.
+	at io.jsonwebtoken.security.Keys.hmacShaKeyFor(Keys.java:83)
+	at com.kk.utils.JwtUtil.generateToken(JwtUtil.java:20)
+	at com.kk.service.impl.EmpServiceImpl.login(EmpServiceImpl.java:115)
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:580)
+	at org.springframework.aop.support.AopUtils.invokeJoinpointUsingReflection(AopUtils.java:359)
+	at org.springframework.aop.framework.CglibAopProxy$DynamicAdvisedInterceptor.intercept(CglibAopProxy.java:723)
+	at com.kk.service.impl.EmpServiceImpl$$SpringCGLIB$$0.login(<generated>)
+	at com.kk.controller.LoginController.login(LoginController.java:26)
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:580)
+	at org.springframework.web.method.support.InvocableHandlerMethod.doInvoke(InvocableHandlerMethod.java:257)
+	at org.springframework.web.method.support.InvocableHandlerMethod.invokeForRequest(InvocableHandlerMethod.java:190)
+	at org.springframework.web.servlet.mvc.method.annotation.ServletInvocableHandlerMethod.invokeAndHandle(ServletInvocableHandlerMethod.java:118)
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.invokeHandlerMethod(RequestMappingHandlerAdapter.java:986)
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.handleInternal(RequestMappingHandlerAdapter.java:891)
+	at org.springframework.web.servlet.mvc.method.AbstractHandlerMethodAdapter.handle(AbstractHandlerMethodAdapter.java:87)
+	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:1088)
+	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:978)
+	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:1014)
+	at org.springframework.web.servlet.FrameworkServlet.doPost(FrameworkServlet.java:914)
+	at jakarta.servlet.http.HttpServlet.service(HttpServlet.java:590)
+	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:885)
+	at jakarta.servlet.http.HttpServlet.service(HttpServlet.java:658)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:195)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140)
+	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:51)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:164)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140)
+	at org.springframework.web.filter.RequestContextFilter.doFilterInternal(RequestContextFilter.java:100)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:164)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140)
+	at org.springframework.web.filter.FormContentFilter.doFilterInternal(FormContentFilter.java:93)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:164)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140)
+	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:201)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:164)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140)
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:167)
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:90)
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:483)
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:115)
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:93)
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:74)
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:344)
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:397)
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:63)
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:905)
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1741)
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:52)
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1190)
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:659)
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:63)
+	at java.base/java.lang.Thread.run(Thread.java:1575)
+2026-09-09T20:13:44.066+08:00 INFO  --- [SpringApplicationShutdownHook] o.s.boot.web.embedded.tomcat.GracefulShutdown      : Commencing graceful shutdown. Waiting for active requests to complete
+2026-09-09T20:13:44.074+08:00 INFO  --- [tomcat-shutdown] o.s.boot.web.embedded.tomcat.GracefulShutdown      : Graceful shutdown complete
+2026-09-09T20:13:44.077+08:00 INFO  --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource                 : HikariPool-1 - Shutdown initiated...
+2026-09-09T20:13:44.084+08:00 INFO  --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource                 : HikariPool-1 - Shutdown completed.
+2026-09-09T20:13:48.131+08:00 INFO  --- [main] com.kk.TliasWebManagementApplication               : Starting TliasWebManagementApplication using Java 23.0.2 with PID 26588 (D:\web_ai_code\Web-ai-project-03\tlias-web-management\target\classes started by 28428 in D:\web_ai_code\Web-ai-project-03)
+2026-09-09T20:13:48.132+08:00 INFO  --- [main] com.kk.TliasWebManagementApplication               : No active profile set, falling back to 1 default profile: "default"
+2026-09-09T20:13:49.079+08:00 INFO  --- [main] o.s.boot.web.embedded.tomcat.TomcatWebServer       : Tomcat initialized with port 8080 (http)
+2026-09-09T20:13:49.091+08:00 INFO  --- [main] org.apache.coyote.http11.Http11NioProtocol         : Initializing ProtocolHandler ["http-nio-8080"]
+2026-09-09T20:13:49.092+08:00 INFO  --- [main] org.apache.catalina.core.StandardService           : Starting service [Tomcat]
+2026-09-09T20:13:49.093+08:00 INFO  --- [main] org.apache.catalina.core.StandardEngine            : Starting Servlet engine: [Apache Tomcat/10.1.34]
+2026-09-09T20:13:49.146+08:00 INFO  --- [main] o.a.c.core.ContainerBase.[Tomcat].[localhost].[/]  : Initializing Spring embedded WebApplicationContext
+2026-09-09T20:13:49.147+08:00 INFO  --- [main] o.s.b.w.s.c.ServletWebServerApplicationContext     : Root WebApplicationContext: initialization completed in 964 ms
+2026-09-09T20:13:49.773+08:00 INFO  --- [main] org.apache.coyote.http11.Http11NioProtocol         : Starting ProtocolHandler ["http-nio-8080"]
+2026-09-09T20:13:49.793+08:00 INFO  --- [main] o.s.boot.web.embedded.tomcat.TomcatWebServer       : Tomcat started on port 8080 (http) with context path '/'
+2026-09-09T20:13:49.799+08:00 INFO  --- [main] com.kk.TliasWebManagementApplication               : Started TliasWebManagementApplication in 2.021 seconds (process running for 2.805)
+2026-09-09T20:13:52.755+08:00 INFO  --- [http-nio-8080-exec-1] o.a.c.core.ContainerBase.[Tomcat].[localhost].[/]  : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2026-09-09T20:13:52.755+08:00 INFO  --- [http-nio-8080-exec-1] org.springframework.web.servlet.DispatcherServlet  : Initializing Servlet 'dispatcherServlet'
+2026-09-09T20:13:52.756+08:00 INFO  --- [http-nio-8080-exec-1] org.springframework.web.servlet.DispatcherServlet  : Completed initialization in 1 ms
+2026-09-09T20:13:52.882+08:00 INFO  --- [http-nio-8080-exec-1] com.kk.controller.LoginController                  : login Emp(id=null, username=zhangsan, password=123456, name=null, gender=null, phone=null, job=null, salary=null, image=null, entryDate=null, deptId=null, createTime=null, updateTime=null, deptName=null, exprList=null)
+2026-09-09T20:13:52.914+08:00 INFO  --- [http-nio-8080-exec-1] com.zaxxer.hikari.HikariDataSource                 : HikariPool-1 - Starting...
+2026-09-09T20:13:53.357+08:00 INFO  --- [http-nio-8080-exec-1] com.zaxxer.hikari.pool.HikariPool                  : HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@517a09c8
+2026-09-09T20:13:53.360+08:00 INFO  --- [http-nio-8080-exec-1] com.zaxxer.hikari.HikariDataSource                 : HikariPool-1 - Start completed.
+2026-09-09T20:13:53.445+08:00 INFO  --- [http-nio-8080-exec-1] com.kk.service.impl.EmpServiceImpl                 : 登陆成功 Emp(id=1, username=zhangsan, password=null, name=张三, gender=null, phone=null, job=null, salary=null, image=null, entryDate=null, deptId=null, createTime=null, updateTime=null, deptName=null, exprList=null)
+2026-09-09T20:18:11.688+08:00 INFO  --- [http-nio-8080-exec-7] com.kk.controller.LoginController                  : login Emp(id=null, username=zhangsan, password=123456, name=null, gender=null, phone=null, job=null, salary=null, image=null, entryDate=null, deptId=null, createTime=null, updateTime=null, deptName=null, exprList=null)
+2026-09-09T20:18:11.689+08:00 INFO  --- [http-nio-8080-exec-7] com.kk.service.impl.EmpServiceImpl                 : 登陆成功 Emp(id=1, username=zhangsan, password=null, name=张三, gender=null, phone=null, job=null, salary=null, image=null, entryDate=null, deptId=null, createTime=null, updateTime=null, deptName=null, exprList=null)
+2026-09-09T20:19:01.460+08:00 INFO  --- [http-nio-8080-exec-5] com.kk.controller.LoginController                  : login Emp(id=null, username=zhangsan, password=123456, name=null, gender=null, phone=null, job=null, salary=null, image=null, entryDate=null, deptId=null, createTime=null, updateTime=null, deptName=null, exprList=null)
+2026-09-09T20:19:01.462+08:00 INFO  --- [http-nio-8080-exec-5] com.kk.service.impl.EmpServiceImpl                 : 登陆成功 Emp(id=1, username=zhangsan, password=null, name=张三, gender=null, phone=null, job=null, salary=null, image=null, entryDate=null, deptId=null, createTime=null, updateTime=null, deptName=null, exprList=null)
+2026-09-09T20:19:03.443+08:00 WARN  --- [http-nio-8080-exec-9] o.s.w.s.m.support.DefaultHandlerExceptionResolver  : Resolved [org.springframework.web.HttpRequestMethodNotSupportedException: Request method 'GET' is not supported]
+2026-09-09T20:23:06.406+08:00 INFO  --- [SpringApplicationShutdownHook] o.s.boot.web.embedded.tomcat.GracefulShutdown      : Commencing graceful shutdown. Waiting for active requests to complete
+2026-09-09T20:23:06.415+08:00 INFO  --- [tomcat-shutdown] o.s.boot.web.embedded.tomcat.GracefulShutdown      : Graceful shutdown complete
+2026-09-09T20:23:06.423+08:00 INFO  --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource                 : HikariPool-1 - Shutdown initiated...
+2026-09-09T20:23:06.436+08:00 INFO  --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource                 : HikariPool-1 - Shutdown completed.
+2026-09-09T20:36:59.410+08:00 INFO  --- [main] com.kk.TliasWebManagementApplication               : Starting TliasWebManagementApplication using Java 23.0.2 with PID 10388 (D:\web_ai_code\Web-ai-project-03\tlias-web-management\target\classes started by 28428 in D:\web_ai_code\Web-ai-project-03)
+2026-09-09T20:36:59.411+08:00 INFO  --- [main] com.kk.TliasWebManagementApplication               : No active profile set, falling back to 1 default profile: "default"
+2026-09-09T20:37:00.650+08:00 INFO  --- [main] o.s.boot.web.embedded.tomcat.TomcatWebServer       : Tomcat initialized with port 8080 (http)
+2026-09-09T20:37:00.668+08:00 INFO  --- [main] org.apache.coyote.http11.Http11NioProtocol         : Initializing ProtocolHandler ["http-nio-8080"]
+2026-09-09T20:37:00.671+08:00 INFO  --- [main] org.apache.catalina.core.StandardService           : Starting service [Tomcat]
+2026-09-09T20:37:00.671+08:00 INFO  --- [main] org.apache.catalina.core.StandardEngine            : Starting Servlet engine: [Apache Tomcat/10.1.34]
+2026-09-09T20:37:00.887+08:00 INFO  --- [main] o.a.c.core.ContainerBase.[Tomcat].[localhost].[/]  : Initializing Spring embedded WebApplicationContext
+2026-09-09T20:37:00.887+08:00 INFO  --- [main] o.s.b.w.s.c.ServletWebServerApplicationContext     : Root WebApplicationContext: initialization completed in 1417 ms
+2026-09-09T20:37:00.973+08:00 INFO  --- [main] com.kk.Filter.DemoFilter                           : 初始化
+2026-09-09T20:37:01.832+08:00 INFO  --- [main] org.apache.coyote.http11.Http11NioProtocol         : Starting ProtocolHandler ["http-nio-8080"]
+2026-09-09T20:37:01.863+08:00 INFO  --- [main] o.s.boot.web.embedded.tomcat.TomcatWebServer       : Tomcat started on port 8080 (http) with context path '/'
+2026-09-09T20:37:01.873+08:00 INFO  --- [main] com.kk.TliasWebManagementApplication               : Started TliasWebManagementApplication in 2.957 seconds (process running for 3.965)
+2026-09-09T20:37:14.407+08:00 INFO  --- [http-nio-8080-exec-2] o.a.c.core.ContainerBase.[Tomcat].[localhost].[/]  : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2026-09-09T20:37:14.407+08:00 INFO  --- [http-nio-8080-exec-2] org.springframework.web.servlet.DispatcherServlet  : Initializing Servlet 'dispatcherServlet'
+2026-09-09T20:37:14.409+08:00 INFO  --- [http-nio-8080-exec-2] org.springframework.web.servlet.DispatcherServlet  : Completed initialization in 1 ms
+2026-09-09T20:37:14.414+08:00 INFO  --- [http-nio-8080-exec-2] com.kk.Filter.DemoFilter                           : 请求到来
+2026-09-09T20:37:47.503+08:00 INFO  --- [http-nio-8080-exec-3] com.kk.Filter.DemoFilter                           : 请求到来
+2026-09-09T20:38:03.292+08:00 INFO  --- [http-nio-8080-exec-4] com.kk.Filter.DemoFilter                           : 请求到来
+2026-09-09T20:38:04.256+08:00 INFO  --- [http-nio-8080-exec-5] com.kk.Filter.DemoFilter                           : 请求到来
+2026-09-09T20:39:48.302+08:00 INFO  --- [SpringApplicationShutdownHook] o.s.boot.web.embedded.tomcat.GracefulShutdown      : Commencing graceful shutdown. Waiting for active requests to complete
+2026-09-09T20:39:48.311+08:00 INFO  --- [tomcat-shutdown] o.s.boot.web.embedded.tomcat.GracefulShutdown      : Graceful shutdown complete
+2026-09-09T20:39:48.317+08:00 INFO  --- [SpringApplicationShutdownHook] com.kk.Filter.DemoFilter                           : 销毁
+2026-09-09T20:39:52.886+08:00 INFO  --- [main] com.kk.TliasWebManagementApplication               : Starting TliasWebManagementApplication using Java 23.0.2 with PID 11200 (D:\web_ai_code\Web-ai-project-03\tlias-web-management\target\classes started by 28428 in D:\web_ai_code\Web-ai-project-03)
+2026-09-09T20:39:52.887+08:00 INFO  --- [main] com.kk.TliasWebManagementApplication               : No active profile set, falling back to 1 default profile: "default"
+2026-09-09T20:39:53.935+08:00 INFO  --- [main] o.s.boot.web.embedded.tomcat.TomcatWebServer       : Tomcat initialized with port 8080 (http)
+2026-09-09T20:39:53.949+08:00 INFO  --- [main] org.apache.coyote.http11.Http11NioProtocol         : Initializing ProtocolHandler ["http-nio-8080"]
+2026-09-09T20:39:53.951+08:00 INFO  --- [main] org.apache.catalina.core.StandardService           : Starting service [Tomcat]
+2026-09-09T20:39:53.952+08:00 INFO  --- [main] org.apache.catalina.core.StandardEngine            : Starting Servlet engine: [Apache Tomcat/10.1.34]
+2026-09-09T20:39:54.016+08:00 INFO  --- [main] o.a.c.core.ContainerBase.[Tomcat].[localhost].[/]  : Initializing Spring embedded WebApplicationContext
+2026-09-09T20:39:54.017+08:00 INFO  --- [main] o.s.b.w.s.c.ServletWebServerApplicationContext     : Root WebApplicationContext: initialization completed in 1064 ms
+2026-09-09T20:39:54.070+08:00 INFO  --- [main] com.kk.Filter.DemoFilter                           : 初始化
+2026-09-09T20:39:54.778+08:00 INFO  --- [main] org.apache.coyote.http11.Http11NioProtocol         : Starting ProtocolHandler ["http-nio-8080"]
+2026-09-09T20:39:54.802+08:00 INFO  --- [main] o.s.boot.web.embedded.tomcat.TomcatWebServer       : Tomcat started on port 8080 (http) with context path '/'
+2026-09-09T20:39:54.810+08:00 INFO  --- [main] com.kk.TliasWebManagementApplication               : Started TliasWebManagementApplication in 2.318 seconds (process running for 3.153)
+2026-09-09T20:40:06.846+08:00 INFO  --- [http-nio-8080-exec-1] o.a.c.core.ContainerBase.[Tomcat].[localhost].[/]  : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2026-09-09T20:40:06.847+08:00 INFO  --- [http-nio-8080-exec-1] org.springframework.web.servlet.DispatcherServlet  : Initializing Servlet 'dispatcherServlet'
+2026-09-09T20:40:06.848+08:00 INFO  --- [http-nio-8080-exec-1] org.springframework.web.servlet.DispatcherServlet  : Completed initialization in 1 ms
+2026-09-09T20:40:06.853+08:00 INFO  --- [http-nio-8080-exec-1] com.kk.Filter.DemoFilter                           : 请求到来
+2026-09-09T20:40:06.979+08:00 INFO  --- [http-nio-8080-exec-1] com.kk.controller.LoginController                  : login Emp(id=null, username=zhangsan, password=123456, name=null, gender=null, phone=null, job=null, salary=null, image=null, entryDate=null, deptId=null, createTime=null, updateTime=null, deptName=null, exprList=null)
+2026-09-09T20:40:07.013+08:00 INFO  --- [http-nio-8080-exec-1] com.zaxxer.hikari.HikariDataSource                 : HikariPool-1 - Starting...
+2026-09-09T20:40:07.628+08:00 INFO  --- [http-nio-8080-exec-1] com.zaxxer.hikari.pool.HikariPool                  : HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@18ee0c4f
+2026-09-09T20:40:07.631+08:00 INFO  --- [http-nio-8080-exec-1] com.zaxxer.hikari.HikariDataSource                 : HikariPool-1 - Start completed.
+2026-09-09T20:40:07.718+08:00 INFO  --- [http-nio-8080-exec-1] com.kk.service.impl.EmpServiceImpl                 : 登陆成功 Emp(id=1, username=zhangsan, password=null, name=张三, gender=null, phone=null, job=null, salary=null, image=null, entryDate=null, deptId=null, createTime=null, updateTime=null, deptName=null, exprList=null)
+2026-09-09T20:41:42.465+08:00 INFO  --- [SpringApplicationShutdownHook] o.s.boot.web.embedded.tomcat.GracefulShutdown      : Commencing graceful shutdown. Waiting for active requests to complete
+2026-09-09T20:41:42.471+08:00 INFO  --- [tomcat-shutdown] o.s.boot.web.embedded.tomcat.GracefulShutdown      : Graceful shutdown complete
+2026-09-09T20:41:42.475+08:00 INFO  --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource                 : HikariPool-1 - Shutdown initiated...
+2026-09-09T20:41:42.482+08:00 INFO  --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource                 : HikariPool-1 - Shutdown completed.
+2026-09-09T20:41:42.483+08:00 INFO  --- [SpringApplicationShutdownHook] com.kk.Filter.DemoFilter                           : 销毁
+2026-09-09T20:58:44.006+08:00 INFO  --- [main] com.kk.TliasWebManagementApplication               : Starting TliasWebManagementApplication using Java 23.0.2 with PID 18396 (D:\web_ai_code\Web-ai-project-03\tlias-web-management\target\classes started by 28428 in D:\web_ai_code\Web-ai-project-03)
+2026-09-09T20:58:44.008+08:00 INFO  --- [main] com.kk.TliasWebManagementApplication               : No active profile set, falling back to 1 default profile: "default"
+2026-09-09T20:58:45.083+08:00 INFO  --- [main] o.s.boot.web.embedded.tomcat.TomcatWebServer       : Tomcat initialized with port 8080 (http)
+2026-09-09T20:58:45.100+08:00 INFO  --- [main] org.apache.coyote.http11.Http11NioProtocol         : Initializing ProtocolHandler ["http-nio-8080"]
+2026-09-09T20:58:45.103+08:00 INFO  --- [main] org.apache.catalina.core.StandardService           : Starting service [Tomcat]
+2026-09-09T20:58:45.103+08:00 INFO  --- [main] org.apache.catalina.core.StandardEngine            : Starting Servlet engine: [Apache Tomcat/10.1.34]
+2026-09-09T20:58:45.165+08:00 INFO  --- [main] o.a.c.core.ContainerBase.[Tomcat].[localhost].[/]  : Initializing Spring embedded WebApplicationContext
+2026-09-09T20:58:45.166+08:00 INFO  --- [main] o.s.b.w.s.c.ServletWebServerApplicationContext     : Root WebApplicationContext: initialization completed in 1095 ms
+2026-09-09T20:58:45.213+08:00 INFO  --- [main] com.kk.Filter.DemoFilter                           : 初始化
+2026-09-09T20:58:46.054+08:00 INFO  --- [main] org.apache.coyote.http11.Http11NioProtocol         : Starting ProtocolHandler ["http-nio-8080"]
+2026-09-09T20:58:46.087+08:00 INFO  --- [main] o.s.boot.web.embedded.tomcat.TomcatWebServer       : Tomcat started on port 8080 (http) with context path '/'
+2026-09-09T20:58:46.098+08:00 INFO  --- [main] com.kk.TliasWebManagementApplication               : Started TliasWebManagementApplication in 2.496 seconds (process running for 3.337)
+2026-09-09T20:59:22.750+08:00 INFO  --- [SpringApplicationShutdownHook] o.s.boot.web.embedded.tomcat.GracefulShutdown      : Commencing graceful shutdown. Waiting for active requests to complete
+2026-09-09T20:59:22.758+08:00 INFO  --- [tomcat-shutdown] o.s.boot.web.embedded.tomcat.GracefulShutdown      : Graceful shutdown complete
+2026-09-09T20:59:22.765+08:00 INFO  --- [SpringApplicationShutdownHook] com.kk.Filter.DemoFilter                           : 销毁
+2026-09-09T20:59:27.165+08:00 INFO  --- [main] com.kk.TliasWebManagementApplication               : Starting TliasWebManagementApplication using Java 23.0.2 with PID 10232 (D:\web_ai_code\Web-ai-project-03\tlias-web-management\target\classes started by 28428 in D:\web_ai_code\Web-ai-project-03)
+2026-09-09T20:59:27.166+08:00 INFO  --- [main] com.kk.TliasWebManagementApplication               : No active profile set, falling back to 1 default profile: "default"
+2026-09-09T20:59:28.206+08:00 INFO  --- [main] o.s.boot.web.embedded.tomcat.TomcatWebServer       : Tomcat initialized with port 8080 (http)
+2026-09-09T20:59:28.219+08:00 INFO  --- [main] org.apache.coyote.http11.Http11NioProtocol         : Initializing ProtocolHandler ["http-nio-8080"]
+2026-09-09T20:59:28.221+08:00 INFO  --- [main] org.apache.catalina.core.StandardService           : Starting service [Tomcat]
+2026-09-09T20:59:28.221+08:00 INFO  --- [main] org.apache.catalina.core.StandardEngine            : Starting Servlet engine: [Apache Tomcat/10.1.34]
+2026-09-09T20:59:28.274+08:00 INFO  --- [main] o.a.c.core.ContainerBase.[Tomcat].[localhost].[/]  : Initializing Spring embedded WebApplicationContext
+2026-09-09T20:59:28.274+08:00 INFO  --- [main] o.s.b.w.s.c.ServletWebServerApplicationContext     : Root WebApplicationContext: initialization completed in 1054 ms
+2026-09-09T20:59:29.003+08:00 INFO  --- [main] org.apache.coyote.http11.Http11NioProtocol         : Starting ProtocolHandler ["http-nio-8080"]
+2026-09-09T20:59:29.029+08:00 INFO  --- [main] o.s.boot.web.embedded.tomcat.TomcatWebServer       : Tomcat started on port 8080 (http) with context path '/'
+2026-09-09T20:59:29.038+08:00 INFO  --- [main] com.kk.TliasWebManagementApplication               : Started TliasWebManagementApplication in 2.251 seconds (process running for 3.052)
+2026-09-09T21:00:04.869+08:00 INFO  --- [http-nio-8080-exec-3] o.a.c.core.ContainerBase.[Tomcat].[localhost].[/]  : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2026-09-09T21:00:04.869+08:00 INFO  --- [http-nio-8080-exec-3] org.springframework.web.servlet.DispatcherServlet  : Initializing Servlet 'dispatcherServlet'
+2026-09-09T21:00:04.870+08:00 INFO  --- [http-nio-8080-exec-3] org.springframework.web.servlet.DispatcherServlet  : Completed initialization in 1 ms
+2026-09-09T21:00:04.996+08:00 INFO  --- [http-nio-8080-exec-3] com.kk.controller.LoginController                  : login Emp(id=null, username=zhangsan, password=123456, name=null, gender=null, phone=null, job=null, salary=null, image=null, entryDate=null, deptId=null, createTime=null, updateTime=null, deptName=null, exprList=null)
+2026-09-09T21:00:05.030+08:00 INFO  --- [http-nio-8080-exec-3] com.zaxxer.hikari.HikariDataSource                 : HikariPool-1 - Starting...
+2026-09-09T21:00:05.484+08:00 INFO  --- [http-nio-8080-exec-3] com.zaxxer.hikari.pool.HikariPool                  : HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@2e961599
+2026-09-09T21:00:05.486+08:00 INFO  --- [http-nio-8080-exec-3] com.zaxxer.hikari.HikariDataSource                 : HikariPool-1 - Start completed.
+2026-09-09T21:00:05.573+08:00 INFO  --- [http-nio-8080-exec-3] com.kk.service.impl.EmpServiceImpl                 : 登陆成功 Emp(id=1, username=zhangsan, password=null, name=张三, gender=null, phone=null, job=null, salary=null, image=null, entryDate=null, deptId=null, createTime=null, updateTime=null, deptName=null, exprList=null)
+2026-09-09T21:05:28.435+08:00 INFO  --- [SpringApplicationShutdownHook] o.s.boot.web.embedded.tomcat.GracefulShutdown      : Commencing graceful shutdown. Waiting for active requests to complete
+2026-09-09T21:05:28.443+08:00 INFO  --- [tomcat-shutdown] o.s.boot.web.embedded.tomcat.GracefulShutdown      : Graceful shutdown complete
+2026-09-09T21:05:28.447+08:00 INFO  --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource                 : HikariPool-1 - Shutdown initiated...
+2026-09-09T21:05:28.454+08:00 INFO  --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource                 : HikariPool-1 - Shutdown completed.
