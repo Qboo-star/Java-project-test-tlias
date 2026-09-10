@@ -2,7 +2,6 @@ package com.kk.Filter;
 
 import jakarta.servlet.Filter;
 import jakarta.servlet.FilterChain;
-import jakarta.servlet.FilterConfig;
 import jakarta.servlet.ServletException;
 import jakarta.servlet.ServletRequest;
 import jakarta.servlet.ServletResponse;
@@ -10,7 +9,6 @@ import jakarta.servlet.annotation.WebFilter;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
 import com.kk.utils.JwtUtil;
-import javax.imageio.spi.ServiceRegistry;
 import java.io.IOException;
 
 @WebFilter(urlPatterns = "/*")
@@ -20,10 +18,22 @@ public class TokenFilter implements Filter {
     public void doFilter(ServletRequest servletRequest, ServletResponse servletResponse, FilterChain filterChain) throws ServletException, IOException {
         HttpServletRequest request = (HttpServletRequest) servletRequest;
         HttpServletResponse response = (HttpServletResponse) servletResponse;
+
+        // 跨域预检请求直接放行
+        if ("OPTIONS".equalsIgnoreCase(request.getMethod())) {
+            filterChain.doFilter(servletRequest, servletResponse);
+            return;
+        }
+
         //获取请求路径
         String path = request.getRequestURI();
-        //判断是否是登录，如果路径包含/login，则放行
-        if (path.contains("/login")) {
+        //放行登录接口
+        if ("/login".equals(path)) {
+            filterChain.doFilter(servletRequest, servletResponse);
+            return;
+        }
+        //放行上传后的静态资源（浏览器 <img> 等原生请求无法携带 token 头）
+        if (path.startsWith("/upload/")) {
             filterChain.doFilter(servletRequest, servletResponse);
             return;
         }

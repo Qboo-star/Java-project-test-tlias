@@ -33,6 +33,7 @@ public interface EmpMapper {
 
     void updateById(Emp emp);
 
-    @Select("select id,username,name from emp where username=#{username} and password=#{password}")
-    Emp selectByUsernameAndPassword(Emp emp);
+    // 根据用户名查询员工（含密码哈希），密码比对在 Service 层通过 BCrypt 完成
+    @Select("select id, username, name, password from emp where username=#{username}")
+    Emp selectByUsername(String username);
 }

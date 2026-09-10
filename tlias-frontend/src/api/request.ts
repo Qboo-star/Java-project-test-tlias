@@ -20,10 +20,13 @@ const service = axios.create({
   timeout: 10000,
 })
 
-// 请求拦截器
+// 请求拦截器：自动携带 token
 service.interceptors.request.use(
   (config: InternalAxiosRequestConfig) => {
-    // 预留 token 鉴权位（后端目前未启用）
+    const token = localStorage.getItem('tlias_token')
+    if (token) {
+      config.headers.set('token', token)
+    }
     return config
   },
   (error) => Promise.reject(error),
@@ -47,7 +50,13 @@ service.interceptors.response.use(
   (error) => {
     const status = error.response?.status
     if (status === 401) {
-      ElMessage.error('未登录或登录已过期')
+      ElMessage.error('未登录或登录已过期，请重新登录')
+      // 清除失效的登录态并跳转登录页（避免在登录页重复跳转）
+      localStorage.removeItem('tlias_token')
+      localStorage.removeItem('tlias_user')
+      if (window.location.pathname !== '/login') {
+        window.location.href = '/login'
+      }
     } else if (status && status >= 500) {
       ElMessage.error('服务器异常，请稍后重试')
     } else {
