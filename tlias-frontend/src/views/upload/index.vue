@@ -1,10 +1,16 @@
 <script setup lang="ts">
-import { ref } from 'vue'
+import { ref, computed } from 'vue'
 import { ElMessage } from 'element-plus'
 import { UploadFilled, CopyDocument, Delete } from '@element-plus/icons-vue'
 import { useUploadStore, type UploadRecord } from '@/stores/upload'
 
 const uploadStore = useUploadStore()
+
+// el-upload 原生请求不走 axios，需手动携带 token
+const uploadHeaders = computed(() => {
+  const token = localStorage.getItem('tlias_token')
+  return token ? { token } : {}
+})
 
 // 最近一次上传结果
 const lastUrl = ref('')
@@ -42,6 +48,14 @@ function beforeUpload(file: File) {
   return true
 }
 
+function handleUploadError(err: Error) {
+  ElMessage.error('上传失败，未登录或登录已过期请重新登录')
+  if (err.message?.includes('401')) {
+    localStorage.removeItem('tlias_token')
+    window.location.href = '/login'
+  }
+}
+
 async function copyUrl(url: string) {
   try {
     await navigator.clipboard.writeText(url)
@@ -71,11 +85,13 @@ function removeRecord(row: UploadRecord) {
 
       <el-upload
         action="/api/upload"
+        :headers="uploadHeaders"
         drag
         multiple
         :show-file-list="false"
         :before-upload="beforeUpload"
         :on-success="handleSuccess"
+        :on-error="handleUploadError"
         accept="image/jpeg,image/png"
         class="uploader"
       >

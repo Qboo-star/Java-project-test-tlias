@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { ref, reactive, onMounted } from 'vue'
+import { ref, reactive, computed, onMounted } from 'vue'
 import { ElMessage } from 'element-plus'
 import { Plus, Refresh, Edit, Delete, Search } from '@element-plus/icons-vue'
 import { confirmDelete } from '@/utils/confirm'
@@ -178,12 +178,25 @@ function removeExpr(index: number) {
   empForm.exprList?.splice(index, 1)
 }
 
-// 头像上传（el-upload 原生请求，on-success 取 Result.data）
+// 头像上传（el-upload 原生请求不走 axios，需手动携带 token）
+const uploadHeaders = computed(() => {
+  const token = localStorage.getItem('tlias_token')
+  return token ? { token } : {}
+})
+
 function handleUploadSuccess(res: any) {
   // 后端按文档应返回 data 为 URL；若实际返回 null，用空串占位
   empForm.image = res?.data || ''
   if (!res?.data) {
     ElMessage.warning('后端未返回图片地址，已记录但无法预览')
+  }
+}
+
+function handleUploadError(err: Error) {
+  ElMessage.error('头像上传失败，未登录或登录已过期请重新登录')
+  if (err.message?.includes('401')) {
+    localStorage.removeItem('tlias_token')
+    window.location.href = '/login'
   }
 }
 
@@ -460,9 +473,11 @@ onMounted(async () => {
         <el-form-item label="头像">
           <el-upload
             action="/api/upload"
+            :headers="uploadHeaders"
             :show-file-list="false"
             :before-upload="beforeUpload"
             :on-success="handleUploadSuccess"
+            :on-error="handleUploadError"
             accept="image/jpeg,image/png"
           >
             <div v-if="empForm.image" class="avatar-box">

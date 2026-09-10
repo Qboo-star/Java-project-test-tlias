@@ -10,11 +10,12 @@ import com.kk.service.EmpService;
 import com.kk.utils.JwtUtil;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 import org.springframework.util.CollectionUtils;
+import org.springframework.util.StringUtils;
 
-import java.time.LocalDate;
 import java.time.LocalDateTime;
 import java.util.Arrays;
 import java.util.HashMap;
@@ -29,6 +30,9 @@ public class EmpServiceImpl implements EmpService {
 
     @Autowired
     private EmpExprMapper empExprMapper;
+
+    @Autowired
+    private PasswordEncoder passwordEncoder;
 
     /*@Override
     public PageResult<Emp> page(Integer page, Integer pageSize, String name, Integer gender, LocalDate begin, LocalDate end) {
@@ -103,11 +107,11 @@ public class EmpServiceImpl implements EmpService {
 
     @Override
     public LOginInfo login(Emp emp){
-        //根据用户名和密码查询员工信息
-        Emp e = empMapper.selectByUsernameAndPassword(emp);
-        //判断是否存在员工，存在则组装员工信息
-        if(e!=null){
-            log.info("登陆成功 {}", e);
+        //根据用户名查询员工信息
+        Emp e = empMapper.selectByUsername(emp.getUsername());
+        //用户存在且 BCrypt 密码比对通过，才组装登录信息
+        if(e != null && passwordEncoder.matches(emp.getPassword(), e.getPassword())){
+            log.info("登陆成功，用户名：{}", e.getUsername());
             //生成JWT
             Map<String, Object> claims = new HashMap<>();
             claims.put("id", e.getId());
@@ -115,7 +119,8 @@ public class EmpServiceImpl implements EmpService {
             String jwt=JwtUtil.generateToken(claims);
             return new LOginInfo(e.getId(), e.getUsername(), e.getName(),jwt);
         }
-        //不存在则null
+        //用户名不存在或密码错误
+        log.warn("登录失败，用户名：{}", emp.getUsername());
         return null;
     }
 }

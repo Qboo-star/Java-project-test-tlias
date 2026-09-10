@@ -14,6 +14,14 @@ const form = reactive({
   password: '123456',
 })
 
+// 登录成功后后端返回的员工信息（含 token）
+interface LoginResult {
+  id: number
+  username: string
+  name: string
+  token: string
+}
+
 const rules = {
   username: [{ required: true, message: '请输入用户名', trigger: 'blur' }],
   password: [
@@ -28,19 +36,19 @@ async function handleLogin() {
     if (!valid) return
     loading.value = true
     try {
-      // 调用登录接口（后端未实现时返回 404，前端做兜底）
-      let token = ''
-      try {
-        const res = await request.post('/login', form)
-        token = res?.token || res || ''
-      } catch {
-        // 后端未提供登录接口时，本地放行（开发模式）
-        token = 'dev-token'
+      // 调用登录接口，成功后后端返回 { id, username, name, token }
+      const res = await request.post<LoginResult, LoginResult>('/login', form)
+      const token = res?.token
+      if (!token) {
+        ElMessage.error('登录失败，请稍后重试')
+        return
       }
       localStorage.setItem('tlias_token', token)
-      localStorage.setItem('tlias_user', form.username)
+      localStorage.setItem('tlias_user', res?.name || form.username)
       ElMessage.success('登录成功')
       router.replace('/')
+    } catch {
+      // 账号密码错误等提示已由响应拦截器统一弹出，留在登录页
     } finally {
       loading.value = false
     }

@@ -1,5 +1,6 @@
 package com.kk.pojo;
 
+import com.fasterxml.jackson.annotation.JsonProperty;
 import lombok.Data;
 import java.time.LocalDate;
 import java.time.LocalDateTime;
@@ -9,6 +10,8 @@ import java.util.List;
 public class Emp {
     private Integer id; //ID,主键
     private String username; //用户名
+    // 密码仅允许请求时写入（新增/修改），响应时永不序列化返回
+    @JsonProperty(access = JsonProperty.Access.WRITE_ONLY)
     private String password; //密码
     private String name; //姓名
     private Integer gender; //性别，1:男，2:女
